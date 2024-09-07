@@ -1,0 +1,650 @@
+{
+    "get": {
+        "summary": "Retrieve filtered inventory products",
+        "security": [
+            {
+                "bearerAuth": []
+            }
+        ],
+        "parameters": [
+            {
+                "name": "page",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "example": 1
+                }
+            },
+            {
+                "name": "categories",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "Sneakers"
+                }
+            },
+            {
+                "name": "min_price",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "example": 50
+                }
+            },
+            {
+                "name": "max_price",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "example": 2000
+                }
+            },
+            {
+                "name": "type",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "integer",
+                    "example": 1
+                }
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Successful retrieval of products data",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "integer",
+                                    "example": 200
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Success"
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "properties": {
+                                        "products": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": 1
+                                                    },
+                                                    "is_returnable": {
+                                                        "type": "boolean",
+                                                        "example": true
+                                                    },
+                                                    "is_have_variant": {
+                                                        "type": "boolean",
+                                                        "example": false
+                                                    },
+                                                    "core_product_id": {
+                                                        "type": "integer",
+                                                        "example": null,
+                                                        "nullable": true
+                                                    },
+                                                    "title": {
+                                                        "type": "string",
+                                                        "example": "Iure illum est nobis dolore ipsum et."
+                                                    },
+                                                    "sku": {
+                                                        "type": "string",
+                                                        "example": "QE4P6VUQH9"
+                                                    },
+                                                    "barcode": {
+                                                        "type": "string",
+                                                        "example": "9874733482706"
+                                                    },
+                                                    "retail_price": {
+                                                        "type": "integer",
+                                                        "example": 1098
+                                                    },
+                                                    "wholesale_price": {
+                                                        "type": "integer",
+                                                        "example": 842
+                                                    },
+                                                    "cost": {
+                                                        "type": "integer",
+                                                        "example": 72
+                                                    },
+                                                    "is_draft": {
+                                                        "type": "boolean",
+                                                        "example": false
+                                                    },
+                                                    "product_type_id": {
+                                                        "type": "integer",
+                                                        "example": 2
+                                                    },
+                                                    "product_status_id": {
+                                                        "type": "integer",
+                                                        "example": 3
+                                                    },
+                                                    "category_id": {
+                                                        "type": "integer",
+                                                        "example": 5
+                                                    },
+                                                    "brand_id": {
+                                                        "type": "integer",
+                                                        "example": 2
+                                                    },
+                                                    "user_id": {
+                                                        "type": "integer",
+                                                        "example": null,
+                                                        "nullable": true
+                                                    },
+                                                    "product_attribute_id": {
+                                                        "type": "integer",
+                                                        "example": 1
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "example": "2024-08-06T06:51:34.000000Z"
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "example": "2024-08-06T06:51:34.000000Z"
+                                                    },
+                                                    "deleted_at": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "nullable": true,
+                                                        "example": null
+                                                    },
+                                                    "category": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "integer",
+                                                                "example": 5
+                                                            },
+                                                            "name": {
+                                                                "type": "string",
+                                                                "example": "Heels"
+                                                            },
+                                                            "created_at": {
+                                                                "type": "string",
+                                                                "format": "date-time",
+                                                                "nullable": true,
+                                                                "example": null
+                                                            },
+                                                            "updated_at": {
+                                                                "type": "string",
+                                                                "format": "date-time",
+                                                                "nullable": true,
+                                                                "example": null
+                                                            },
+                                                            "deleted_at": {
+                                                                "type": "string",
+                                                                "format": "date-time",
+                                                                "nullable": true,
+                                                                "example": null
+                                                            }
+                                                        }
+                                                    },
+                                                    "brand": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "integer",
+                                                                "example": 2
+                                                            },
+                                                            "name": {
+                                                                "type": "string",
+                                                                "example": "Adidas"
+                                                            },
+                                                            "created_at": {
+                                                                "type": "string",
+                                                                "format": "date-time",
+                                                                "nullable": true,
+                                                                "example": null
+                                                            },
+                                                            "updated_at": {
+                                                                "type": "string",
+                                                                "format": "date-time",
+                                                                "nullable": true,
+                                                                "example": null
+                                                            },
+                                                            "deleted_at": {
+                                                                "type": "string",
+                                                                "format": "date-time",
+                                                                "nullable": true,
+                                                                "example": null
+                                                            }
+                                                        }
+                                                    },
+                                                    "product_images": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "id": {
+                                                                    "type": "integer",
+                                                                    "example": 1
+                                                                },
+                                                                "name": {
+                                                                    "type": "string",
+                                                                    "example": "recusandae"
+                                                                },
+                                                                "file_name": {
+                                                                    "type": "string",
+                                                                    "example": "facere.jpg"
+                                                                },
+                                                                "mime_type": {
+                                                                    "type": "string",
+                                                                    "example": "image/jpg"
+                                                                },
+                                                                "path": {
+                                                                    "type": "string",
+                                                                    "example": "product_images/architecto.jpg"
+                                                                },
+                                                                "disk": {
+                                                                    "type": "string",
+                                                                    "example": "local"
+                                                                },
+                                                                "size": {
+                                                                    "type": "string",
+                                                                    "example": "13575"
+                                                                },
+                                                                "url": {
+                                                                    "type": "string",
+                                                                    "example": "http://hilpert.com/"
+                                                                },
+                                                                "product_id": {
+                                                                    "type": "integer",
+                                                                    "example": 1
+                                                                },
+                                                                "created_at": {
+                                                                    "type": "string",
+                                                                    "format": "date-time",
+                                                                    "example": "2024-08-06T06:51:35.000000Z"
+                                                                },
+                                                                "updated_at": {
+                                                                    "type": "string",
+                                                                    "format": "date-time",
+                                                                    "example": "2024-08-06T06:51:35.000000Z"
+                                                                },
+                                                                "deleted_at": {
+                                                                    "type": "string",
+                                                                    "format": "date-time",
+                                                                    "nullable": true,
+                                                                    "example": null
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "product_type": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "integer",
+                                                                "example": 2
+                                                            },
+                                                            "name": {
+                                                                "type": "string",
+                                                                "example": "Wholesale"
+                                                            },
+                                                            "description": {
+                                                                "type": "string",
+                                                                "nullable": true,
+                                                                "example": null
+                                                            },
+                                                            "created_at": {
+                                                                "type": "string",
+                                                                "format": "date-time",
+                                                                "nullable": true,
+                                                                "example": null
+                                                            },
+                                                            "updated_at": {
+                                                                "type": "string",
+                                                                "format": "date-time",
+                                                                "nullable": true,
+                                                                "example": null
+                                                            },
+                                                            "deleted_at": {
+                                                                "type": "string",
+                                                                "format": "date-time",
+                                                                "nullable": true,
+                                                                "example": null
+                                                            }
+                                                        }
+                                                    },
+                                                    "product_status": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "integer",
+                                                                "example": 3
+                                                            },
+                                                            "name": {
+                                                                "type": "string",
+                                                                "example": "Draft"
+                                                            },
+                                                            "created_at": {
+                                                                "type": "string",
+                                                                "format": "date-time",
+                                                                "nullable": true,
+                                                                "example": null
+                                                            },
+                                                            "updated_at": {
+                                                                "type": "string",
+                                                                "format": "date-time",
+                                                                "nullable": true,
+                                                                "example": null
+                                                            },
+                                                            "deleted_at": {
+                                                                "type": "string",
+                                                                "format": "date-time",
+                                                                "nullable": true,
+                                                                "example": null
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "401": {
+                "description": "Unauthorized access",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "error"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Unauthorized"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "500": {
+                "description": "Internal server error",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "error"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "An internal server error occurred."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "post": {
+        "summary": "Create a new product in the inventory",
+        "security": [
+            {
+                "bearerAuth": []
+            }
+        ],
+        "requestBody": {
+            "required": true,
+            "content": {
+                "multipart/form-data": {
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "is_returnable": {
+                                "type": "boolean",
+                                "example": true,
+                                "nullable": true
+                            },
+                            "is_have_variant": {
+                                "type": "boolean",
+                                "example": false,
+                                "nullable": true
+                            },
+                            "core_product_id": {
+                                "type": "integer",
+                                "example": 123,
+                                "nullable": true
+                            },
+                            "title": {
+                                "type": "string",
+                                "example": "Example Product Title",
+                                "minLength": 8,
+                                "maxLength": 255
+                            },
+                            "retail_price": {
+                                "type": "integer",
+                                "example": 5000,
+                                "nullable": true
+                            },
+                            "wholesale_price": {
+                                "type": "integer",
+                                "example": 4500,
+                                "nullable": true
+                            },
+                            "cost": {
+                                "type": "integer",
+                                "example": 4000
+                            },
+                            "is_draft": {
+                                "type": "boolean",
+                                "example": true,
+                                "nullable": true
+                            },
+                            "product_type_id": {
+                                "type": "integer",
+                                "example": 1,
+                                "nullable": true
+                            },
+                            "product_status_id": {
+                                "type": "integer",
+                                "example": 2,
+                                "nullable": true
+                            },
+                            "category_id": {
+                                "type": "integer",
+                                "example": 3,
+                                "nullable": true
+                            },
+                            "brand_id": {
+                                "type": "integer",
+                                "example": 4,
+                                "nullable": true
+                            },
+                            "user_id": {
+                                "type": "integer",
+                                "example": 5,
+                                "nullable": true
+                            },
+                            "size": {
+                                "type": "string",
+                                "example": "M",
+                                "minLength": 1,
+                                "maxLength": 10
+                            },
+                            "width": {
+                                "type": "integer",
+                                "example": 50
+                            },
+                            "height": {
+                                "type": "integer",
+                                "example": 100
+                            },
+                            "weight": {
+                                "type": "integer",
+                                "example": 200
+                            },
+                            "color": {
+                                "type": "string",
+                                "example": "Red",
+                                "minLength": 1,
+                                "maxLength": 150
+                            },
+                            "material": {
+                                "type": "string",
+                                "example": "Cotton",
+                                "minLength": 1,
+                                "maxLength": 150
+                            },
+                            "image": {
+                                "type": "string",
+                                "format": "binary",
+                                "description": "Product image file (JPEG, PNG, PDF)",
+                                "example": "file"
+                            }
+                        },
+                        "required": [
+                            "title",
+                            "cost",
+                            "size",
+                            "width",
+                            "height",
+                            "weight",
+                            "color",
+                            "material",
+                            "image"
+                        ]
+                    }
+                }
+            }
+        },
+        "responses": {
+            "200": {
+                "description": "Product successfully created",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "integer",
+                                    "example": 200
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Product created successfully"
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": 123
+                                        },
+                                        "title": {
+                                            "type": "string",
+                                            "example": "Example Product Title"
+                                        },
+                                        "size": {
+                                            "type": "string",
+                                            "example": "M"
+                                        },
+                                        "color": {
+                                            "type": "string",
+                                            "example": "Red"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "401": {
+                "description": "Unauthorized access",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "error"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Unauthorized"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "422": {
+                "description": "Validation error",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "error"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Validation failed"
+                                },
+                                "errors": {
+                                    "type": "object",
+                                    "example": {
+                                        "title": [
+                                            "The title field is required."
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "500": {
+                "description": "Internal server error",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "error"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "An internal server error occurred."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

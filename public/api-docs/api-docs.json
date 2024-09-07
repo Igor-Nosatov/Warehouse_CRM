@@ -1,0 +1,62 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Warehouse API Documentation",
+      "termsOfService": "http://swagger.io/terms/",
+      "license": {
+        "name": "Apache 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      },
+      "version": "3.0.0"
+    },
+    "servers": [
+      {
+        "url": "http://0.0.0.0/api",
+        "description": "Warehouse API Documentation"
+      }
+    ],
+    "components": {
+      "securitySchemes": {
+        "bearerAuth": {
+          "type": "http",
+          "scheme": "bearer",
+          "bearerFormat": "JWT"
+        }
+      }
+    },
+    "paths": {
+        "/login": {
+            "$ref": "./swagger-resources/auth/login.json"
+        },
+        "/v1/dashboard": {
+            "$ref": "./swagger-resources/dashboard/dashboard.json"
+        },
+        "/v1/dashboard/inventory/products": {
+            "$ref": "./swagger-resources/inventory/products.json"
+        },
+        "/v1/dashboard/inventory/products/{product}": {
+            "$ref": "./swagger-resources/inventory/productId.json"
+        },
+        "/v1/dashboard/inventory/filter": {
+            "$ref": "./swagger-resources/inventory/product_filter.json"
+        },
+        "/v1/dashboard/sales/customers": {
+            "$ref": "./swagger-resources/sales/customers.json"
+        },
+        "/v1/dashboard/sales/customers/{customer}": {
+            "$ref": "./swagger-resources/sales/customerId.json"
+        },
+        "/v1/dashboard/sales/customers/filters": {
+            "$ref": "./swagger-resources/sales/customer_filters.json"
+        },
+        "/v1/dashboard/order/vendor": {
+            "$ref": "./swagger-resources/order/vendors.json"
+        },
+        "/v1/dashboard/order/vendor/{vendor}": {
+            "$ref": "./swagger-resources/order/vendorId.json"
+        },
+        "/v1/dashboard/order/vendor-filters": {
+            "$ref": "./swagger-resources/order/vendor_filters.json"
+        }
+    }
+}

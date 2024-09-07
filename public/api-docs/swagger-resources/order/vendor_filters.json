@@ -1,0 +1,109 @@
+{
+    "get": {
+      "summary": "Retrieve vendor filters data",
+      "security": [
+        {
+          "bearerAuth": []
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Successful retrieval of vendor filters data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 200
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Success"
+                  },
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "vendor_status": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string",
+                              "example": "Active"
+                            },
+                            "count": {
+                              "type": "integer",
+                              "example": 35
+                            }
+                          }
+                        }
+                      },
+                      "vendor_type": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string",
+                              "example": "Wholesaler"
+                            },
+                            "count": {
+                              "type": "integer",
+                              "example": 47
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "Unauthorized access",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "example": "error"
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Unauthorized"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal server error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "example": "error"
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "An internal server error occurred."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

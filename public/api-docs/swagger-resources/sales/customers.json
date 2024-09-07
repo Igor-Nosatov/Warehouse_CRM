@@ -1,0 +1,435 @@
+{
+    "get": {
+        "summary": "Retrieve customer sales data",
+        "security": [
+            {
+                "bearerAuth": []
+            }
+        ],
+        "parameters": [
+            {
+                "name": "search",
+                "in": "query",
+                "description": "Search term for filtering customers by name or other attributes",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            {
+                "name": "customer_type",
+                "in": "query",
+                "description": "Filter by customer type (e.g., Retail, Wholesale)",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            {
+                "name": "customer_status",
+                "in": "query",
+                "description": "Filter by customer status (e.g., Active, Inactive)",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            {
+                "name": "order_by_name",
+                "in": "query",
+                "description": "Column name to order by (e.g., first_name, last_name)",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            {
+                "name": "order_by_param",
+                "in": "query",
+                "description": "Ordering direction (e.g., asc, desc)",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            {
+                "name": "purchases_min_amount",
+                "in": "query",
+                "description": "Minimum amount of total purchases for filtering",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            {
+                "name": "purchases_max_amount",
+                "in": "query",
+                "description": "Maximum amount of total purchases for filtering",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            {
+                "name": "receivables_min_amount",
+                "in": "query",
+                "description": "Minimum amount of receivables for filtering",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            },
+            {
+                "name": "receivables_max_amount",
+                "in": "query",
+                "description": "Maximum amount of receivables for filtering",
+                "required": false,
+                "schema": {
+                    "type": "integer"
+                }
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Successful retrieval of customer sales data",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "integer",
+                                    "example": 200
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Success"
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "properties": {
+                                        "customer_data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": 1
+                                                    },
+                                                    "first_name": {
+                                                        "type": "string",
+                                                        "example": "Eugenia"
+                                                    },
+                                                    "last_name": {
+                                                        "type": "string",
+                                                        "example": "Romaguera"
+                                                    },
+                                                    "customer_photo_url": {
+                                                        "type": "string",
+                                                        "example": "https://via.placeholder.com/640x480.png/002299?text=autem"
+                                                    },
+                                                    "customer_type": {
+                                                        "type": "string",
+                                                        "example": "Retail"
+                                                    },
+                                                    "email": {
+                                                        "type": "string",
+                                                        "example": "eduardo.jenkins@example.net"
+                                                    },
+                                                    "phone": {
+                                                        "type": "string",
+                                                        "example": "(863) 581-5854"
+                                                    },
+                                                    "remark": {
+                                                        "type": "string",
+                                                        "example": "Fugiat quia nemo maxime non."
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "example": "2024-08-06T06:51:34.000000Z"
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "example": "2024-08-06T06:51:34.000000Z"
+                                                    },
+                                                    "deleted_at": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "nullable": true
+                                                    },
+                                                    "customer_status": {
+                                                        "type": "string",
+                                                        "example": "Active"
+                                                    },
+                                                    "total_purchases": {
+                                                        "type": "integer",
+                                                        "example": 6489
+                                                    },
+                                                    "receivables": {
+                                                        "type": "integer",
+                                                        "example": 3083
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "meta": {
+                                            "type": "object",
+                                            "properties": {
+                                                "total": {
+                                                    "type": "integer",
+                                                    "example": 100
+                                                },
+                                                "per_page": {
+                                                    "type": "integer",
+                                                    "example": 8
+                                                },
+                                                "current_page": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "last_page": {
+                                                    "type": "integer",
+                                                    "example": 13
+                                                },
+                                                "from": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "to": {
+                                                    "type": "integer",
+                                                    "example": 8
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "401": {
+                "description": "Unauthorized access",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "error"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Unauthorized"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "500": {
+                "description": "Internal server error",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "error"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "An internal server error occurred."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "post": {
+        "summary": "Create a new customer",
+        "security": [
+            {
+                "bearerAuth": []
+            }
+        ],
+        "requestBody": {
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "first_name": {
+                                "type": "string",
+                                "example": "Jane11"
+                            },
+                            "last_name": {
+                                "type": "string",
+                                "example": "Doe11"
+                            },
+                            "customer_photo_url": {
+                                "type": "string",
+                                "example": "https://example.com/photo.jpg"
+                            },
+                            "customer_type": {
+                                "type": "string",
+                                "example": "Retail"
+                            },
+                            "customer_status": {
+                                "type": "string",
+                                "example": "Suspended"
+                            },
+                            "email": {
+                                "type": "string",
+                                "example": "jane.doe@example11.com"
+                            },
+                            "phone": {
+                                "type": "string",
+                                "example": "+1-555-987-6111"
+                            },
+                            "remark": {
+                                "type": "string",
+                                "example": "Preferred customer."
+                            },
+                            "total_purchases": {
+                                "type": "integer",
+                                "example": 10000
+                            },
+                            "receivables": {
+                                "type": "integer",
+                                "example": 1500
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "responses": {
+            "200": {
+                "description": "Successful creation of a new customer",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "integer",
+                                    "example": 200
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Success"
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "properties": {
+                                        "first_name": {
+                                            "type": "string",
+                                            "example": "Jane11"
+                                        },
+                                        "last_name": {
+                                            "type": "string",
+                                            "example": "Doe11"
+                                        },
+                                        "customer_photo_url": {
+                                            "type": "string",
+                                            "example": "https://example.com/photo.jpg"
+                                        },
+                                        "customer_type": {
+                                            "type": "string",
+                                            "example": "Retail"
+                                        },
+                                        "customer_status": {
+                                            "type": "string",
+                                            "example": "Suspended"
+                                        },
+                                        "email": {
+                                            "type": "string",
+                                            "example": "jane.doe@example11.com"
+                                        },
+                                        "phone": {
+                                            "type": "string",
+                                            "example": "+1-555-987-6111"
+                                        },
+                                        "remark": {
+                                            "type": "string",
+                                            "example": "Preferred customer."
+                                        },
+                                        "total_purchases": {
+                                            "type": "integer",
+                                            "example": 10000
+                                        },
+                                        "receivables": {
+                                            "type": "integer",
+                                            "example": 1500
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2024-08-28T09:41:31.000000Z"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2024-08-28T09:41:31.000000Z"
+                                        },
+                                        "id": {
+                                            "type": "integer",
+                                            "example": 102
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "401": {
+                "description": "Unauthorized access",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "error"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Unauthorized"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "500": {
+                "description": "Internal server error",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "error"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "An internal server error occurred."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

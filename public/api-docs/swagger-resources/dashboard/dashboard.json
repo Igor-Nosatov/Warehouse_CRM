@@ -1,0 +1,342 @@
+{
+    "get": {
+      "summary": "Retrieve dashboard data",
+      "security": [
+        {
+          "bearerAuth": []
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Successful retrieval of dashboard data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "example": 200
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Success"
+                  },
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "stockLevel": {
+                        "type": "object",
+                        "properties": {
+                          "LowLevelStock": {
+                            "type": "object",
+                            "properties": {
+                              "percentage": {
+                                "type": "number",
+                                "format": "float",
+                                "example": 0
+                              },
+                              "totalQty": {
+                                "type": "integer",
+                                "example": 0
+                              }
+                            }
+                          },
+                          "AverageLevelStock": {
+                            "type": "object",
+                            "properties": {
+                              "percentage": {
+                                "type": "number",
+                                "format": "float",
+                                "example": 4.22
+                              },
+                              "totalQty": {
+                                "type": "integer",
+                                "example": 10977
+                              }
+                            }
+                          },
+                          "HighLevelStock": {
+                            "type": "object",
+                            "properties": {
+                              "percentage": {
+                                "type": "number",
+                                "format": "float",
+                                "example": 3.93
+                              },
+                              "totalQty": {
+                                "type": "integer",
+                                "example": 10223
+                              }
+                            }
+                          },
+                          "MaxLevelStock": {
+                            "type": "object",
+                            "properties": {
+                              "percentage": {
+                                "type": "number",
+                                "format": "float",
+                                "example": 91.85
+                              },
+                              "totalQty": {
+                                "type": "integer",
+                                "example": 238846
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "bestSellingProducts": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "integer",
+                              "example": 83
+                            },
+                            "is_returnable": {
+                              "type": "boolean",
+                              "example": false
+                            },
+                            "is_have_variant": {
+                              "type": "boolean",
+                              "example": true
+                            },
+                            "title": {
+                              "type": "string",
+                              "example": "Voluptate qui at natus sunt."
+                            },
+                            "sku": {
+                              "type": "string",
+                              "example": "5LFMM31U15"
+                            },
+                            "barcode": {
+                              "type": "string",
+                              "example": "9598432627960"
+                            },
+                            "retail_price": {
+                              "type": "integer",
+                              "example": 1000
+                            },
+                            "wholesale_price": {
+                              "type": "integer",
+                              "example": 820
+                            },
+                            "cost": {
+                              "type": "integer",
+                              "example": 352
+                            },
+                            "product_type_id": {
+                              "type": "integer",
+                              "example": 2
+                            },
+                            "product_status_id": {
+                              "type": "integer",
+                              "example": 1
+                            },
+                            "category_id": {
+                              "type": "integer",
+                              "example": 2
+                            },
+                            "brand_id": {
+                              "type": "integer",
+                              "example": 3
+                            },
+                            "sales_orders_count": {
+                              "type": "integer",
+                              "example": 1
+                            }
+                          }
+                        }
+                      },
+                      "salesOrderCounts": {
+                        "type": "object",
+                        "properties": {
+                          "totalProductPacked": {
+                            "type": "object",
+                            "properties": {
+                              "qty": {
+                                "type": "integer",
+                                "example": 25
+                              },
+                              "percentage": {
+                                "type": "number",
+                                "format": "float",
+                                "example": 25
+                              }
+                            }
+                          },
+                          "totalProductToBeProcessing": {
+                            "type": "object",
+                            "properties": {
+                              "qty": {
+                                "type": "integer",
+                                "example": 26
+                              },
+                              "percentage": {
+                                "type": "number",
+                                "format": "float",
+                                "example": 26
+                              }
+                            }
+                          },
+                          "totalProductShipped": {
+                            "type": "object",
+                            "properties": {
+                              "qty": {
+                                "type": "integer",
+                                "example": 29
+                              },
+                              "percentage": {
+                                "type": "number",
+                                "format": "float",
+                                "example": 29
+                              }
+                            }
+                          },
+                          "totalSalesProductDelivered": {
+                            "type": "object",
+                            "properties": {
+                              "qty": {
+                                "type": "integer",
+                                "example": 20
+                              },
+                              "percentage": {
+                                "type": "number",
+                                "format": "float",
+                                "example": 20
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "activeWorkOrder": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "integer",
+                              "example": 100
+                            },
+                            "status": {
+                              "type": "string",
+                              "example": "Processing"
+                            },
+                            "total_amount": {
+                              "type": "integer",
+                              "example": 38069
+                            },
+                            "total_quantity": {
+                              "type": "integer",
+                              "example": 25240
+                            },
+                            "date_time_of_placement": {
+                              "type": "string",
+                              "example": "2024-06-05T02:39:47.000000Z"
+                            },
+                            "date_time_of_delivery": {
+                              "type": "string",
+                              "example": "2024-02-24T00:18:53.000000Z"
+                            },
+                            "delivery_location": {
+                              "type": "string",
+                              "example": "39182 Jayson Mountains Suite 255\nLake Golden, AK 94967-6059"
+                            },
+                            "product_id": {
+                              "type": "integer",
+                              "example": 100
+                            },
+                            "customer_id": {
+                              "type": "integer",
+                              "example": 2
+                            },
+                            "sales_transaction_id": {
+                              "type": "integer",
+                              "example": 199
+                            }
+                          }
+                        }
+                      },
+                      "salesOrderSummary": {
+                        "type": "object",
+                        "properties": {
+                          "2024-Aug": {
+                            "type": "object",
+                            "properties": {
+                              "salesOrder": {
+                                "type": "integer",
+                                "example": 0
+                              },
+                              "salesReturn": {
+                                "type": "integer",
+                                "example": 0
+                              }
+                            }
+                          },
+                          "2024-Jul": {
+                            "type": "object",
+                            "properties": {
+                              "salesOrder": {
+                                "type": "integer",
+                                "example": 13
+                              },
+                              "salesReturn": {
+                                "type": "integer",
+                                "example": 46
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 401
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Unauthorized"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 500
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "An internal server error occurred."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

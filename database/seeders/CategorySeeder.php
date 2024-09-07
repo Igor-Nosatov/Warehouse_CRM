@@ -1,0 +1,26 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class CategorySeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        DB::table('categories')->insert([
+            ['name' => 'Sneakers'],
+            ['name' => 'Boots'],
+            ['name' => 'Sandals'],
+            ['name' => 'Flats'],
+            ['name' => 'Heels'],
+            ['name' => 'Oxfords'],
+            ['name' => 'Loafers'],
+            ['name' => 'Slippers'],
+        ]);
+    }
+}

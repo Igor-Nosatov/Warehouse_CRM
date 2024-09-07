@@ -1,0 +1,557 @@
+{
+    "get": {
+        "summary": "Retrieve customer details",
+        "security": [
+            {
+                "bearerAuth": []
+            }
+        ],
+        "parameters": [
+            {
+                "name": "customerId",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "integer",
+                    "example": 22
+                },
+                "description": "ID of the customer to retrieve"
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Successful retrieval of customer details",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "integer",
+                                    "example": 200
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Success"
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": 22
+                                        },
+                                        "first_name": {
+                                            "type": "string",
+                                            "example": "Hilton"
+                                        },
+                                        "last_name": {
+                                            "type": "string",
+                                            "example": "Mosciski"
+                                        },
+                                        "customer_photo_url": {
+                                            "type": "string",
+                                            "example": "https://via.placeholder.com/640x480.png/009966?text=exercitationem"
+                                        },
+                                        "customer_type": {
+                                            "type": "string",
+                                            "example": "Wholesale"
+                                        },
+                                        "email": {
+                                            "type": "string",
+                                            "example": "rickey24@example.net"
+                                        },
+                                        "phone": {
+                                            "type": "string",
+                                            "example": "(541) 732-6001"
+                                        },
+                                        "remark": {
+                                            "type": "string",
+                                            "example": "Rerum delectus cum tempore vel repellat explicabo."
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "format": "date-time",
+                                            "example": "2024-08-06T06:51:34.000000Z"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "format": "date-time",
+                                            "example": "2024-08-06T06:51:34.000000Z"
+                                        },
+                                        "deleted_at": {
+                                            "type": "string",
+                                            "format": "date-time",
+                                            "nullable": true
+                                        },
+                                        "customer_status": {
+                                            "type": "string",
+                                            "example": "Active"
+                                        },
+                                        "total_purchases": {
+                                            "type": "integer",
+                                            "example": 918
+                                        },
+                                        "receivables": {
+                                            "type": "integer",
+                                            "example": 6295
+                                        },
+                                        "sales_orders": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object"
+                                            }
+                                        },
+                                        "sales_returns": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": 86
+                                                    },
+                                                    "reason": {
+                                                        "type": "string",
+                                                        "example": "Id natus in minima voluptatibus."
+                                                    },
+                                                    "return_date": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "example": "2024-05-24T05:56:46.000000Z"
+                                                    },
+                                                    "status": {
+                                                        "type": "string",
+                                                        "example": "Inspecting"
+                                                    },
+                                                    "sales_order_id": {
+                                                        "type": "integer",
+                                                        "example": 17
+                                                    },
+                                                    "customer_id": {
+                                                        "type": "integer",
+                                                        "example": 22
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "example": "2024-08-06T06:51:41.000000Z"
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "example": "2024-08-06T06:51:41.000000Z"
+                                                    },
+                                                    "deleted_at": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "nullable": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "customer_notes": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": 63
+                                                    },
+                                                    "notes": {
+                                                        "type": "string",
+                                                        "example": "Velit numquam laudantium rerum repellendus eum sed. Corrupti reiciendis autem nesciunt sint sunt veniam odit. Voluptatem laborum debitis sint."
+                                                    },
+                                                    "user_id": {
+                                                        "type": "integer",
+                                                        "example": 21
+                                                    },
+                                                    "customer_id": {
+                                                        "type": "integer",
+                                                        "example": 22
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "example": "2024-08-06T06:51:43.000000Z"
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "example": "2024-08-06T06:51:43.000000Z"
+                                                    },
+                                                    "deleted_at": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "nullable": true
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "customer_histories": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer",
+                                                        "example": 35
+                                                    },
+                                                    "action": {
+                                                        "type": "string",
+                                                        "example": "sit"
+                                                    },
+                                                    "user_id": {
+                                                        "type": "integer",
+                                                        "example": 16
+                                                    },
+                                                    "customer_id": {
+                                                        "type": "integer",
+                                                        "example": 22
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "example": "2024-08-06T06:51:44.000000Z"
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "example": "2024-08-06T06:51:44.000000Z"
+                                                    },
+                                                    "deleted_at": {
+                                                        "type": "string",
+                                                        "format": "date-time",
+                                                        "nullable": true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "401": {
+                "description": "Unauthorized access",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "error"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Unauthorized"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "500": {
+                "description": "Internal server error",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "error"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "An internal server error occurred."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "delete": {
+        "summary": "Delete customer details",
+        "security": [
+            {
+                "bearerAuth": []
+            }
+        ],
+        "parameters": [
+            {
+                "name": "customerId",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "integer",
+                    "example": 22
+                },
+                "description": "ID of the customer to delete"
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Data deleted successfully",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "integer",
+                                    "example": 200
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Data deleted successfully"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "401": {
+                "description": "Unauthorized access",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "error"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Unauthorized"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "500": {
+                "description": "Internal server error",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "error"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "An internal server error occurred."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "put": {
+        "summary": "Update customer details",
+        "security": [
+            {
+                "bearerAuth": []
+            }
+        ],
+        "parameters": [
+            {
+                "name": "customer_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "integer",
+                    "example": 10
+                }
+            }
+        ],
+        "requestBody": {
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "first_name": {
+                                "type": "string",
+                                "example": "John"
+                            },
+                            "last_name": {
+                                "type": "string",
+                                "example": "Doe"
+                            },
+                            "customer_photo_url": {
+                                "type": "string",
+                                "example": "https://example.com/photos/123.jpg"
+                            },
+                            "customer_type": {
+                                "type": "string",
+                                "example": "Retail"
+                            },
+                            "email": {
+                                "type": "string",
+                                "example": "johndoe@example.com"
+                            },
+                            "phone": {
+                                "type": "string",
+                                "example": "+1234567890"
+                            },
+                            "remark": {
+                                "type": "string",
+                                "example": "Good customer"
+                            },
+                            "total_purchases": {
+                                "type": "integer",
+                                "example": 5
+                            },
+                            "receivables": {
+                                "type": "integer",
+                                "example": 1500
+                            },
+                            "customer_status": {
+                                "type": "string",
+                                "example": "Suspended"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "responses": {
+            "200": {
+                "description": "Successful update of customer details",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "integer",
+                                    "example": 200
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Success"
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": 10
+                                        },
+                                        "first_name": {
+                                            "type": "string",
+                                            "example": "John"
+                                        },
+                                        "last_name": {
+                                            "type": "string",
+                                            "example": "Doe"
+                                        },
+                                        "customer_photo_url": {
+                                            "type": "string",
+                                            "example": "https://example.com/photos/123.jpg"
+                                        },
+                                        "customer_type": {
+                                            "type": "string",
+                                            "example": "Retail"
+                                        },
+                                        "email": {
+                                            "type": "string",
+                                            "example": "johndoe@example.com"
+                                        },
+                                        "phone": {
+                                            "type": "string",
+                                            "example": "+1234567890"
+                                        },
+                                        "remark": {
+                                            "type": "string",
+                                            "example": "Good customer"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2024-08-06T06:51:34.000000Z"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2024-08-28T09:44:24.000000Z"
+                                        },
+                                        "deleted_at": {
+                                            "type": "string",
+                                            "nullable": true,
+                                            "example": null
+                                        },
+                                        "customer_status": {
+                                            "type": "string",
+                                            "example": "Suspended"
+                                        },
+                                        "total_purchases": {
+                                            "type": "integer",
+                                            "example": 5
+                                        },
+                                        "receivables": {
+                                            "type": "integer",
+                                            "example": 1500
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "401": {
+                "description": "Unauthorized access",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "error"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Unauthorized"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "500": {
+                "description": "Internal server error",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "error"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "An internal server error occurred."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

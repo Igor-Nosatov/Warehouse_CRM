@@ -1,0 +1,448 @@
+{
+    "get": {
+      "summary": "Retrieve vendor data",
+      "security": [
+        {
+          "bearerAuth": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "search",
+          "in": "query",
+          "description": "Search term to filter vendors",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "vendor_status",
+          "in": "query",
+          "description": "Filter by vendor status",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "vendor_type",
+          "in": "query",
+          "description": "Filter by vendor type",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "min_price",
+          "in": "query",
+          "description": "Minimum receivables to filter vendors",
+          "required": false,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "max_price",
+          "in": "query",
+          "description": "Maximum receivables to filter vendors",
+          "required": false,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "min_used_credits",
+          "in": "query",
+          "description": "Minimum used credits to filter vendors",
+          "required": false,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "max_used_credits",
+          "in": "query",
+          "description": "Maximum used credits to filter vendors",
+          "required": false,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "order_by_name",
+          "in": "query",
+          "description": "Column name to sort results",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "order_by_param",
+          "in": "query",
+          "description": "Sorting direction (asc or desc)",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "description": "Number of items per page",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "default": 4
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Successful retrieval of vendor data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "vendor_data": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer",
+                          "example": 1
+                        },
+                        "company_name": {
+                          "type": "string",
+                          "example": "Dare-Stracke"
+                        },
+                        "vendor_first_name": {
+                          "type": "string",
+                          "example": "Angelita"
+                        },
+                        "vendor_last_name": {
+                          "type": "string",
+                          "example": "Champlin"
+                        },
+                        "email": {
+                          "type": "string",
+                          "example": "idoyle@example.org"
+                        },
+                        "phone": {
+                          "type": "string",
+                          "example": "+1-364-469-2248"
+                        },
+                        "location": {
+                          "type": "string",
+                          "example": "5126 Magnolia Squares Apt. 941\nStewartport, KY 98373"
+                        },
+                        "website": {
+                          "type": "string",
+                          "example": "http://goodwin.info/excepturi-aut-voluptatem-mollitia-ea-cum-quae-nemo-excepturi.html"
+                        },
+                        "remark": {
+                          "type": "string",
+                          "example": "Molestiae praesentium quia non nobis id. Vitae voluptatum occaecati distinctio qui perspiciatis repellendus qui. Aut eligendi illum beatae enim et est eligendi."
+                        },
+                        "vendor_status": {
+                          "type": "string",
+                          "example": "Active"
+                        },
+                        "vendor_type": {
+                          "type": "string",
+                          "example": "Wholesaler"
+                        },
+                        "receivables": {
+                          "type": "integer",
+                          "example": 2868
+                        },
+                        "used_credits": {
+                          "type": "integer",
+                          "example": 2285
+                        },
+                        "created_at": {
+                          "type": "string",
+                          "format": "date-time",
+                          "example": "2024-08-06T06:51:34.000000Z"
+                        },
+                        "updated_at": {
+                          "type": "string",
+                          "format": "date-time",
+                          "example": "2024-08-06T06:51:34.000000Z"
+                        },
+                        "deleted_at": {
+                          "type": "string",
+                          "format": "date-time",
+                          "nullable": true
+                        }
+                      }
+                    }
+                  },
+                  "meta": {
+                    "type": "object",
+                    "properties": {
+                      "current_page": {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      "per_page": {
+                        "type": "integer",
+                        "example": 4
+                      },
+                      "total": {
+                        "type": "integer",
+                        "example": 100
+                      },
+                      "last_page": {
+                        "type": "integer",
+                        "example": 25
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "Unauthorized access",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "example": "error"
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "Unauthorized"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal server error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "example": "error"
+                  },
+                  "message": {
+                    "type": "string",
+                    "example": "An internal server error occurred."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "post": {
+    "summary": "Create a new vendor",
+    "security": [
+      {
+        "bearerAuth": []
+      }
+    ],
+    "requestBody": {
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "type": "object",
+            "properties": {
+              "company_name": {
+                "type": "string",
+                "example": "JoshSmth"
+              },
+              "vendor_first_name": {
+                "type": "string",
+                "example": "JoshSmth"
+              },
+              "vendor_last_name": {
+                "type": "string",
+                "example": "drgrfaerfaefv"
+              },
+              "email": {
+                "type": "string",
+                "example": "testuser@gmail.com"
+              },
+              "phone": {
+                "type": "string",
+                "example": "661-871-5799"
+              },
+              "location": {
+                "type": "string",
+                "example": "https://www.youtube.com"
+              },
+              "website": {
+                "type": "string",
+                "example": "https://www.youtube.com"
+              },
+              "remark": {
+                "type": "string",
+                "example": "https://www.youtube.com"
+              },
+              "status": {
+                "type": "boolean",
+                "example": true
+              },
+              "vendor_status": {
+                "type": "string",
+                "example": "Inactive"
+              },
+              "vendor_type": {
+                "type": "string",
+                "example": "Wholesaler"
+              },
+              "receivables": {
+                "type": "integer",
+                "example": 1
+              },
+              "used_credits": {
+                "type": "integer",
+                "example": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Successful creation of a new vendor",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "integer",
+                  "example": 200
+                },
+                "message": {
+                  "type": "string",
+                  "example": "Success"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "company_name": {
+                      "type": "string",
+                      "example": "JoshSmth"
+                    },
+                    "vendor_first_name": {
+                      "type": "string",
+                      "example": "JoshSmth"
+                    },
+                    "vendor_last_name": {
+                      "type": "string",
+                      "example": "drgrfaerfaefv"
+                    },
+                    "email": {
+                      "type": "string",
+                      "example": "testuser@gmail.com"
+                    },
+                    "phone": {
+                      "type": "string",
+                      "example": "661-871-5799"
+                    },
+                    "location": {
+                      "type": "string",
+                      "example": "https://www.youtube.com"
+                    },
+                    "website": {
+                      "type": "string",
+                      "example": "https://www.youtube.com"
+                    },
+                    "remark": {
+                      "type": "string",
+                      "example": "https://www.youtube.com"
+                    },
+                    "vendor_type": {
+                      "type": "string",
+                      "example": "Wholesaler"
+                    },
+                    "receivables": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "used_credits": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "example": "2024-08-28T09:38:41.000000Z"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "example": "2024-08-28T09:38:41.000000Z"
+                    },
+                    "id": {
+                      "type": "integer",
+                      "example": 101
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "401": {
+        "description": "Unauthorized access",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "error"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "Unauthorized"
+                }
+              }
+            }
+          }
+        }
+      },
+      "500": {
+        "description": "Internal server error",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "example": "error"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "An internal server error occurred."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  }

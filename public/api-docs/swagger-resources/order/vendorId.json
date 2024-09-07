@@ -1,0 +1,487 @@
+{
+    "get": {
+        "summary": "Retrieve vendor details by ID",
+        "security": [
+            {
+                "bearerAuth": []
+            }
+        ],
+        "parameters": [
+            {
+                "name": "vendor_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "integer",
+                    "example": 1
+                }
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Successful retrieval of vendor details",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "integer",
+                                    "example": 200
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Success"
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": 1
+                                        },
+                                        "company_name": {
+                                            "type": "string",
+                                            "example": "Dare-Stracke"
+                                        },
+                                        "vendor_first_name": {
+                                            "type": "string",
+                                            "example": "Angelita"
+                                        },
+                                        "vendor_last_name": {
+                                            "type": "string",
+                                            "example": "Champlin"
+                                        },
+                                        "email": {
+                                            "type": "string",
+                                            "example": "idoyle@example.org"
+                                        },
+                                        "phone": {
+                                            "type": "string",
+                                            "example": "+1-364-469-2248"
+                                        },
+                                        "location": {
+                                            "type": "string",
+                                            "example": "5126 Magnolia Squares Apt. 941\nStewartport, KY 98373"
+                                        },
+                                        "website": {
+                                            "type": "string",
+                                            "example": "http://goodwin.info/excepturi-aut-voluptatem-mollitia-ea-cum-quae-nemo-excepturi.html"
+                                        },
+                                        "remark": {
+                                            "type": "string",
+                                            "example": "Molestiae praesentium quia non nobis id. Vitae voluptatum occaecati distinctio qui perspiciatis repellendus qui. Aut eligendi illum beatae enim et est eligendi."
+                                        },
+                                        "vendor_status": {
+                                            "type": "string",
+                                            "example": "Active"
+                                        },
+                                        "vendor_type": {
+                                            "type": "string",
+                                            "example": "Wholesaler"
+                                        },
+                                        "receivables": {
+                                            "type": "integer",
+                                            "example": 2868
+                                        },
+                                        "used_credits": {
+                                            "type": "integer",
+                                            "example": 2285
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2024-08-06T06:51:34.000000Z"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2024-08-06T06:51:34.000000Z"
+                                        },
+                                        "deleted_at": {
+                                            "type": "string",
+                                            "nullable": true,
+                                            "example": null
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "401": {
+                "description": "Unauthorized access",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "error"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Unauthorized"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "500": {
+                "description": "Internal server error",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "error"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "An internal server error occurred."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "put": {
+        "summary": "Update vendor by ID",
+        "security": [
+            {
+                "bearerAuth": []
+            }
+        ],
+        "parameters": [
+            {
+                "name": "vendor_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "integer",
+                    "example": 10
+                }
+            }
+        ],
+        "requestBody": {
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "company_name": {
+                                "type": "string",
+                                "example": "Example Corp"
+                            },
+                            "vendor_first_name": {
+                                "type": "string",
+                                "example": "Jane"
+                            },
+                            "vendor_last_name": {
+                                "type": "string",
+                                "example": "Smith"
+                            },
+                            "email": {
+                                "type": "string",
+                                "example": "janesmith@example.com"
+                            },
+                            "phone": {
+                                "type": "string",
+                                "example": "+1234567890"
+                            },
+                            "location": {
+                                "type": "string",
+                                "example": "123 Main Street, Anytown, USA"
+                            },
+                            "website": {
+                                "type": "string",
+                                "example": "https://example.com"
+                            },
+                            "remark": {
+                                "type": "string",
+                                "example": "New vendor for 2024"
+                            },
+                            "status": {
+                                "type": "boolean",
+                                "example": true
+                            },
+                            "vendor_type": {
+                                "type": "string",
+                                "example": "Individual"
+                            },
+                            "receivables": {
+                                "type": "integer",
+                                "example": 9999
+                            },
+                            "used_credits": {
+                                "type": "integer",
+                                "example": 9999
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "responses": {
+            "200": {
+                "description": "Successful update of vendor data",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "integer",
+                                    "example": 200
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Success"
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "example": 10
+                                        },
+                                        "company_name": {
+                                            "type": "string",
+                                            "example": "Example Corp"
+                                        },
+                                        "vendor_first_name": {
+                                            "type": "string",
+                                            "example": "Jane"
+                                        },
+                                        "vendor_last_name": {
+                                            "type": "string",
+                                            "example": "Smith"
+                                        },
+                                        "email": {
+                                            "type": "string",
+                                            "example": "janesmith@example.com"
+                                        },
+                                        "phone": {
+                                            "type": "string",
+                                            "example": "+1234567890"
+                                        },
+                                        "location": {
+                                            "type": "string",
+                                            "example": "123 Main Street, Anytown, USA"
+                                        },
+                                        "website": {
+                                            "type": "string",
+                                            "example": "https://example.com"
+                                        },
+                                        "remark": {
+                                            "type": "string",
+                                            "example": "New vendor for 2024"
+                                        },
+                                        "vendor_status": {
+                                            "type": "string",
+                                            "example": "Inactive"
+                                        },
+                                        "vendor_type": {
+                                            "type": "string",
+                                            "example": "Individual"
+                                        },
+                                        "receivables": {
+                                            "type": "integer",
+                                            "example": 9999
+                                        },
+                                        "used_credits": {
+                                            "type": "integer",
+                                            "example": 9999
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "format": "date-time",
+                                            "example": "2024-08-06T06:51:34.000000Z"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "format": "date-time",
+                                            "example": "2024-08-28T09:52:39.000000Z"
+                                        },
+                                        "deleted_at": {
+                                            "type": "string",
+                                            "format": "date-time",
+                                            "example": "null"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "401": {
+                "description": "Unauthorized access",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "error"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Unauthorized"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "404": {
+                "description": "Vendor not found",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "error"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Vendor not found"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "500": {
+                "description": "Internal server error",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "error"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "An internal server error occurred."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "delete": {
+        "summary": "Delete vendor by ID",
+        "security": [
+            {
+                "bearerAuth": []
+            }
+        ],
+        "parameters": [
+            {
+                "name": "vendor_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                    "type": "integer",
+                    "example": 1
+                }
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Successful deletion of vendor",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "integer",
+                                    "example": 200
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Data deleted successfully"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "401": {
+                "description": "Unauthorized access",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "error"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Unauthorized"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "404": {
+                "description": "Vendor not found",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "error"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Vendor not found"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "500": {
+                "description": "Internal server error",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "error"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "An internal server error occurred."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

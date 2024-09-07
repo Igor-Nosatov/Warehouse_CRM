@@ -1,0 +1,2074 @@
+{
+	"info": {
+		"_postman_id": "aaec94d8-3ce4-4afc-911d-5d05a2879c51",
+		"name": "Warehouse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "562876"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "POST_LOGOUT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|unMXxuFdzqLOXSydqkdqW5nerWzvMjZjdDi60HEd24049b4b",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Cool111",
+									"type": "text"
+								},
+								{
+									"key": "from",
+									"value": "Cool11",
+									"type": "text"
+								},
+								{
+									"key": "to",
+									"value": "Cool111",
+									"type": "text"
+								},
+								{
+									"key": "range",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://0.0.0.0/api/logout",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "testuser@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "testUsere5r6t7y8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://0.0.0.0/api/login",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_REGISTER",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "testUser",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "testuser@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "testUsere5r6t7y8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://0.0.0.0/api/register",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_USER_LIST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|BQ0thIbTKiCfj5lvM6WAaj5DeojToWZnTsdE0P5k4dcdee32",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_USER_BY_ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|BQ0thIbTKiCfj5lvM6WAaj5DeojToWZnTsdE0P5k4dcdee32",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "CREATE_ROLE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|qWLTPpusAM5hRQX580aoPyphG4ovOEx2tad7H2Zj01b8a00d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://0.0.0.0/api/admin/role",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"admin",
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL ROLES",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|qWLTPpusAM5hRQX580aoPyphG4ovOEx2tad7H2Zj01b8a00d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/admin/role",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"admin",
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_ROLE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|wQ1bIxXe4OM0xywMCswZymTd7A7qYSCItaVMUgGhb5753b80",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/admin/role/1",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"admin",
+								"role",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Permission",
+			"item": [
+				{
+					"name": "CREATE_PERMISSION",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|qWLTPpusAM5hRQX580aoPyphG4ovOEx2tad7H2Zj01b8a00d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://0.0.0.0/api/admin/permission",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"admin",
+								"permission"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ALL PERMISSIONS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|qWLTPpusAM5hRQX580aoPyphG4ovOEx2tad7H2Zj01b8a00d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/admin/permission",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"admin",
+								"permission"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_PERMISSON",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|qWLTPpusAM5hRQX580aoPyphG4ovOEx2tad7H2Zj01b8a00d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/admin/permission/1",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"admin",
+								"permission",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "GET_FILTER_LIST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "9|dqHy0YeY13dXe5FK2EFXyokFbGYaYDdrDWagiGSZ079d83a5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/inventory/filter",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"inventory",
+								"filter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_PRODUCT_BY_ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|yLXtKmS5HLtBjOvZa3PrU4Ww0axBXrsdyv7ylk7r77a14a33",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/inventory/products/8",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"inventory",
+								"products",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE_NEW_PRODUCT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|1bEm1eg6eVaH8tWvcKVurEjIBfLL9q223crRz9oY5f1c600c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "cost",
+									"value": " 123123",
+									"type": "text"
+								},
+								{
+									"key": "retail_price",
+									"value": " 12312",
+									"type": "text"
+								},
+								{
+									"key": "wholesale_price",
+									"value": " 1231",
+									"type": "text"
+								},
+								{
+									"key": "is_returnable",
+									"value": " true",
+									"type": "text"
+								},
+								{
+									"key": "is_have_variant",
+									"value": " false",
+									"type": "text"
+								},
+								{
+									"key": "product_type_id",
+									"value": " 2",
+									"type": "text"
+								},
+								{
+									"key": "product_status_id",
+									"value": " 1",
+									"type": "text"
+								},
+								{
+									"key": "brand_id",
+									"value": " 1",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": " 2",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": " 21",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/igor/Рабочий стол/Wiki_Test_Image.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/inventory/products",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"inventory",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE_PRODUCT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|yLXtKmS5HLtBjOvZa3PrU4Ww0axBXrsdyv7ylk7r77a14a33",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"is_returnable\": true,\n    \"is_have_variant\": true,\n    \"title\": \"Optio at impedit iure vel.\",\n    \"retail_price\": 1079,\n    \"wholesale_price\": 870,\n    \"cost\": 422,\n    \"product_type_id\": 1,\n    \"product_status_id\": 1,\n    \"category_id\": 2,\n    \"brand_id\": 1,\n    \"product_attribute_id\": 1,\n    \"width\": 14,\n    \"height\": \"3599\",\n    \"weight\": 1866,\n    \"size\": \"S\",\n    \"color\": \"Blue\",\n    \"material\": \"Cotton\",\n    \"product_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/inventory/products/2",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"inventory",
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_PRODUCT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|g05y8lx1qT09nyklS1w7pYNQKDRno95rvFdUse0df1767a04",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/inventory/products/1",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"inventory",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_PRODUCT_LIST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "11|pvX995yPk1IZeXhMMFKlJp6A77S0c9QwEMyB14kyed208c16",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/inventory/products?min_price=50&max_price=2000",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"inventory",
+								"products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "brand",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "categories",
+									"value": "Sneakers",
+									"disabled": true
+								},
+								{
+									"key": "min_price",
+									"value": "50"
+								},
+								{
+									"key": "max_price",
+									"value": "2000"
+								},
+								{
+									"key": "type",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New_Adjustment",
+			"item": [
+				{
+					"name": "CREATE_ADJUSTMENT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|VUggy9iQnnjHRDMMomVEphrOrMf9Yi0KHxVk3Ewcdc231691",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payment_status\": \"Quantity Adjustment\",\n    \"adjust_stock_date\": \"2024-07-07\",\n    \"reason_for_inventory\": \"Stolen Goods\",\n    \"quantity_available\": 50,\n    \"new_quantity\": 100,\n    \"description\": \"Restocked after audit\",\n    \"product_id\": 1,\n    \"warehouse_id\": 2,\n    \"vendor_id\": 3,\n    \"user_id\": 4\n}\n\n{\n    \"payment_status\": \"quantity_adjustment\",\n    \"adjust_stock_date\": \"2024-07-12\",\n    \"reason_for_inventory\": \"\",\n    \"quantity_available\": 4,\n    \"new_quantity\": 4,\n    \"description\": \"fsbsdbdxz\",\n    \"product_id\": 1,\n    \"vendor_id\": 2,\n    \"warehouse_id\": 3,\n    \"user_id\": 21,\n    \"reason\": \"Missing Goods\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/inventory/adjust-stock",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"inventory",
+								"adjust-stock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ADJUSTMENT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|0iSKsgjH46P4Fk3vJXG2QE59IHnl6mU1JGpwy67kcc8c4b43",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/inventory/adjust-stock/1",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"inventory",
+								"adjust-stock",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product_Notes",
+			"item": [
+				{
+					"name": "CREATE_PRODUCT_NOTES",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|xK9GVIC5I1kiz5VGvMKKLh64O3Y2XLNJFAhbHIH881ddf2ae",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"notes\": \"test\",\n    \"product_id\": 2,\n    \"user_id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/inventory/notes",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"inventory",
+								"notes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_PRODUCT_NOTE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|xK9GVIC5I1kiz5VGvMKKLh64O3Y2XLNJFAhbHIH881ddf2ae",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/inventory/notes/2",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"inventory",
+								"notes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "GET_DASHBOARD_DATA",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "29|zj4pPZ9ltm8t1GzNifA6Fhf5zYfGMumvvtZM4Wt3d2a24835",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "GET_CUSTOMER_LIST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|wpg1MH8brus1MdXSsZACfHQz3M8BJIZESxkHital655c5575",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/sales/customer?search=Cyril  Purdy",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"sales",
+								"customer"
+							],
+							"query": [
+								{
+									"key": "customer_status",
+									"value": "Active",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "Cyril  Purdy"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_CUSTOMER_BY_ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|yLgSA8fs7ZoNHU5H0uvlLZ8xNoeZ4GSUOr4bQ1Rha2f4cabc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/sales/customer/22",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"sales",
+								"customer",
+								"22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_FILTER_LIST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|QJPqeJHMpWKSWtyt4mW7yHgWCJxsYOLmYcJoAUfNff48c905",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/sales/customer/filters",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"sales",
+								"customer",
+								"filters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_CUSTOMER",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|UopQLWMD8Bj5IzH1KN3OUwkncFaQQDLkaFQBKwPhf95f8ee2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/sales/customer/1",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"sales",
+								"customer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE_CUSTOMER",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|pvsUec8TLqoO37o2VKxAbpN2LSRRGiPFpP2JgsWRa374e827",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\",\n    \"customer_photo_url\": \"https://example.com/photos/123.jpg\",\n    \"customer_type\": \"Retail\",\n    \"customer_status\": \"Suspended\",\n    \"email\": \"johndoe@example.com\",\n    \"phone\": \"+1234567890\",\n    \"remark\": \"Good customer\",\n    \"total_purchases\": 5,\n    \"receivables\": 1500\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/sales/customer/10",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"sales",
+								"customer",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_CREATE_CUSTOMER",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|mhw04yOq6A1gzVDoIDbR8OFz87LDya6HVvkSy2Nme7c38f71",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Jane11\",\n    \"last_name\": \"Doe11\",\n    \"customer_photo_url\": \"https://example.com/photo.jpg\",\n    \"customer_type\": \"Retail\",\n    \"customer_status\": \"Suspended\",\n    \"email\": \"jane.doe@example11.com\",\n    \"phone\": \"+1-555-987-6111\",\n    \"remark\": \"Preferred customer.\",\n    \"total_purchases\": 10000,\n    \"receivables\": 1500\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/sales/customer",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"sales",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vendors",
+			"item": [
+				{
+					"name": "GET_VENDOR_LIST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|B2KpDs1j2InqgjHosRUd1oFK5EyL6vjN27jtUi7Z57401928",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/order/vendor?search=Denesik",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"order",
+								"vendor"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Denesik"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_VENDOR_BY_ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|yLgSA8fs7ZoNHU5H0uvlLZ8xNoeZ4GSUOr4bQ1Rha2f4cabc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/order/vendor/1",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"order",
+								"vendor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_FILTER_LIST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|AD4vrueVMUZ5tgRNuIrscIJIGgu1pT2k5mKyejJV5b4f8f68",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/order/vendor-filters",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"order",
+								"vendor-filters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_VENDOR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "14|lFykFKvcxj16ORGP2zbo7scEkJ6HHzDINUXI22eN853fe45b",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/order/vendor/1",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"order",
+								"vendor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE_VENDOR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "16|6WLlrRzf5D4HAnSUILkzmO1afEpS4YXpIcHWIPtKb78679c8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"company_name\": \"Example Corp\",\n    \"vendor_first_name\": \"Jane\",\n    \"vendor_last_name\": \"Smith\",\n    \"email\": \"janesmith@example.com\",\n    \"phone\": \"+1234567890\",\n    \"location\": \"123 Main Street, Anytown, USA\",\n    \"website\": \"https://example.com\",\n    \"remark\": \"New vendor for 2024\",\n    \"status\": true,\n    \"vendor_type\": \"Individual\",\n    \"receivables\":9999,\n    \"used_credits\":9999,\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/order/vendor/10",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"order",
+								"vendor",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_CREATE_VENDOR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|FG9w8z4pfx7tMPwuOgZGBhkFee28dzzSTpz8MhJf87177053",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"company_name\": \"JoshSmth\",\n    \"vendor_first_name\": \"JoshSmth\",\n    \"vendor_last_name\": \"drgrfaerfaefv\",\n    \"email\": \"testuser@gmail.com\",\n    \"phone\": \"661-871-5799\",\n    \"location\": \"https://www.youtube.com/watch?v=ZTTvFN7v0dk\",\n    \"website\": \"https://www.youtube.com/watch?v=ZTTvFN7v0dk\",\n    \"remark\": \"https://www.youtube.com/watch?v=ZTTvFN7v0dk\",\n    \"status\": true,\n    \"vendor_status\": \"Inactive\",\n    \"vendor_type\": \"Wholesaler\",\n    \"receivables\": 1,\n    \"used_credits\": 1\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/order/vendor",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"order",
+								"vendor"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Purchase",
+			"item": [
+				{
+					"name": "GET_PURCHASE_LIST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|B2KpDs1j2InqgjHosRUd1oFK5EyL6vjN27jtUi7Z57401928",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/order/purchase?page=4",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"order",
+								"purchase"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "4"
+								},
+								{
+									"key": "search",
+									"value": "barton33@example.net",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_PURCHASE_BY_ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|yLgSA8fs7ZoNHU5H0uvlLZ8xNoeZ4GSUOr4bQ1Rha2f4cabc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/order/purchase/1",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"order",
+								"purchase",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_FILTER_LIST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|QJPqeJHMpWKSWtyt4mW7yHgWCJxsYOLmYcJoAUfNff48c905",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/order/purchase-filters",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"order",
+								"purchase-filters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_PURCHASE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "14|lFykFKvcxj16ORGP2zbo7scEkJ6HHzDINUXI22eN853fe45b",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/order/purchase/1",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"order",
+								"purchase",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE_PURCHASE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|U9wWfk4rvqJnqGvh592XgjUNbbLmL7UoytGPy2njd5ab063e",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"Processing\",\n    \"total_amount\": 1000,\n    \"total_quantity\": 50,\n    \"date_time_of_placement\": \"2024-07-12T10:00:00Z\",\n    \"date_time_of_delivery\": \"2024-07-20T10:00:00Z\",\n    \"delivery_location\": \"456 Maple Street, Some City, USA\",\n    \"product_id\": 1,\n    \"customer_id\": 1,\n    \"vendor_id\": 2,\n    \"payment_status_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/order/purchase/10",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"order",
+								"purchase",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_CREATE_PURCHASE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|3KxVNn0N9w3rQ6mffb5utuDB38ewA0Z9SNuwNwR41effa227",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"Packed\",\n    \"total_amount\": 1500,\n    \"total_quantity\": 100,\n    \"date_time_of_placement\": \"2024-07-14T12:00:00\",\n    \"date_time_of_delivery\": \"2024-07-20T12:00:00\",\n    \"delivery_location\": \"123 Main St, Anytown, USA\",\n    \"product_id\": 23,\n    \"customer_id\": 35,\n    \"vendor_id\": 20,\n    \"payment_status_id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/order/purchase",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"order",
+								"purchase"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SalesOrder",
+			"item": [
+				{
+					"name": "GET_FILTER_LIST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "11|xL03CrDW5JytNEtF6UEYgwBbIAOZSZGW3YGBazhj3f8e701b",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/sales/order-filter?payment_status=4",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"sales",
+								"order-filter"
+							],
+							"query": [
+								{
+									"key": "payment_status",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_SALES_ORDER_LIST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|Xugm7W6NrD8ronr7NkQHFLGUdZhXdRbFULgFf7Wk746f4a9c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/sales/order",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"sales",
+								"order"
+							],
+							"query": [
+								{
+									"key": "payment_status",
+									"value": "4",
+									"disabled": true
+								},
+								{
+									"key": "sales_order_status",
+									"value": "Packed",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "nNew Francesca",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_SALES_ORDER_BY_ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|Xugm7W6NrD8ronr7NkQHFLGUdZhXdRbFULgFf7Wk746f4a9c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/sales/order/3728",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"sales",
+								"order",
+								"3728"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_SALES_ORDER",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|pvsUec8TLqoO37o2VKxAbpN2LSRRGiPFpP2JgsWRa374e827",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/sales/order/1",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"sales",
+								"order",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE_SALES_ORDER",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "12|XwUxpxN6N5ohfxgcHIHoD4Pbi4oTBrGctReqvnJXc095a58e",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"Packed\",\n    \"total_amount\": 99988888,\n    \"total_quantity\": 1007,\n    \"date_time_of_placement\": \"2024-07-27T04:02\",\n    \"date_time_of_delivery\": \"\",\n    \"delivery_location\": \"6995 Alexzander Ridges\\nNorth Colleenberg, IL 27771\",\n    \"customer_id\": 3,\n    \"payment_status_id\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/sales/order/3726",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"sales",
+								"order",
+								"3726"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_CREATE_SALES_ORDER",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|2zICN5fsghGZPiFr7vlkYRGFMz7Wx8NnN1EmEFhx4565539e",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"Packed\",\n    \"total_amount\": 1500,\n    \"total_quantity\": 100,\n    \"date_time_of_placement\": \"2024-07-14T12:00:00\",\n    \"date_time_of_delivery\": \"2024-07-20T12:00:00\",\n    \"delivery_location\": \"123 Main St, Anytown, USA\",\n    \"product_id\": 18,\n    \"customer_id\": 10,\n    \"payment_status_id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/sales/order",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"sales",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE_RECORD_PAYMENT",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Support_Ticket",
+			"item": [
+				{
+					"name": "POST_SUPPORT_TICKET",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|9DwGiv0ZXsjnwvxflNKCxpsbjb9DOIv3TzirfFMDa923fd6b",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0/api/v1/dashboard/other/support-tickets",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"other",
+								"support-tickets"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Folder",
+			"item": []
+		}
+	]
+}
